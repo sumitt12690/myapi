@@ -20,7 +20,9 @@ mongoose.Promise = global.Promise;
 /**
  * Set up default mongoose connection
  */
-mongoose.connect("mongodb://mlab123:mlab123@ds141611.mlab.com:41611/sumitt12690", { useNewUrlParser: true }).catch((err) => {
+mongoose.connect("mongodb://mlab123:mlab123@ds141611.mlab.com:41611/sumitt12690", 
+{ useNewUrlParser: true })
+.catch((err) => {
     console.log('*** Can Not Connect to Mongo Server:');
 });
 
