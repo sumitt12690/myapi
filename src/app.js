@@ -1,6 +1,5 @@
 import path from 'path';
 import express from 'express';
-import dotenv from 'dotenv';
 import logger from 'morgan';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -10,10 +9,6 @@ import product from './routes/product';
 import mongoose from 'mongoose';
 
 const port = process.env.port || 3000;
-// use dotenv
-dotenv.config({
-    silent: true,
-});
 
 //mongoose connection
 mongoose.Promise = global.Promise;
@@ -79,39 +74,3 @@ app.use((err, req, res, next) => {
 app.listen(port,function () {
     console.log(`Listening on port ${port}`);
 });
-
-
-// export default app;
-/*
-var Schema = mongoose.Schema;
-var testSchema = new Schema({
-    testvalue: Number,
-});
-var Test = mongoose.model("Test", testSchema);
-app.get('/save-array', function (req, res) {
-    var myArray = ['1', '2', '3', '4'];
-    // myArray.forEach(function (value) {
-    //     var Testobj = new Test({
-    //         testvalue: value,
-    //     });
-    //     Testobj.save(function (error) {
-    //         console.log("Your value has been saved!"+value);
-    //         if (error) {
-    //             console.error(error);
-    //         }
-    //     });
-    // });
-    async.eachSeries(myArray, function (value, callback) {
-        var Testobj = new Test({
-            testvalue: value,
-        });
-        Testobj.save(function (error) {
-            console.log("Your value has been saved!" + value);
-            if (error) {
-                console.error(error);
-            }
-            callback();
-        });
-    });
-});
-*/

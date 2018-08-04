@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import moment from 'moment';
+
 const CategorySchema = mongoose.Schema({
     cat_name: {
         type: String,
