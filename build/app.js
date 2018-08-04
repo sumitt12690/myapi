@@ -1,9 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
@@ -46,6 +42,7 @@ var _mongoose2 = _interopRequireDefault(_mongoose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var port = process.env.port || 3000;
 // use dotenv
 _dotenv2.default.config({
     silent: true
@@ -109,7 +106,11 @@ app.use(function (err, req, res, next) {
     next();
 });
 
-exports.default = app;
+app.listen(port, function () {
+    console.log('Listening on port ' + port);
+});
+
+// export default app;
 /*
 var Schema = mongoose.Schema;
 var testSchema = new Schema({

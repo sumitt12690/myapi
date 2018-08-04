@@ -9,6 +9,7 @@ import category from './routes/category';
 import product from './routes/product';
 import mongoose from 'mongoose';
 
+const port = process.env.port || 3000;
 // use dotenv
 dotenv.config({
     silent: true,
@@ -73,7 +74,12 @@ app.use((err, req, res, next) => {
     next();
 });
 
-export default app;
+app.listen(port,function () {
+    console.log(`Listening on port ${port}`);
+});
+
+
+// export default app;
 /*
 var Schema = mongoose.Schema;
 var testSchema = new Schema({
