@@ -7,7 +7,7 @@
     "start": "nodemon src/bin/www --exec babel-node",
     "build": "babel src -d dist",
     "prestart": "npm run build",
-    "heroku-postbuild": "npm install && npm run start"
+    "heroku-postbuild": "npm install"
   },
   "author": "Sumit Mangal",
   "license": "ISC",
